@@ -41,7 +41,7 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/user/{invoiceNo}")
-	public ResponseEntity<CustomerInvoice> getEmployeeById(@PathVariable int invoiceNo) {
+	public ResponseEntity<CustomerInvoice> getCustomerById(@PathVariable int invoiceNo) {
 		CustomerInvoice customer = customerInvoiceRepository.findById(invoiceNo)
 				.orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + invoiceNo));
 		return ResponseEntity.ok(customer);

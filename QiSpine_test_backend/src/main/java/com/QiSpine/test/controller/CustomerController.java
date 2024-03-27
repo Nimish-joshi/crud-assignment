@@ -50,7 +50,7 @@ public class CustomerController {
 	// update employee rest api
 	
 	@PutMapping("/user/{invoiceNo}")
-	public ResponseEntity<CustomerInvoice> updateEmployee(@PathVariable int invoiceNo, @RequestBody CustomerInvoice customerInvoice){
+	public ResponseEntity<CustomerInvoice> updateCustomer(@PathVariable int invoiceNo, @RequestBody CustomerInvoice customerInvoice){
 		CustomerInvoice customer = customerInvoiceRepository.findById(invoiceNo)
 				.orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + invoiceNo));
 		
@@ -67,7 +67,7 @@ public class CustomerController {
 	
 	 
 	@DeleteMapping("/user/{invoiceNo}")
-	public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable int invoiceNo){
+	public ResponseEntity<Map<String, Boolean>> deleteCustomer(@PathVariable int invoiceNo){
 		CustomerInvoice customer = customerInvoiceRepository.findById(invoiceNo)
 				.orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + invoiceNo));
 		
